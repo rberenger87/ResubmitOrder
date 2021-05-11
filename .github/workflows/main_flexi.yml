@@ -21,11 +21,8 @@ jobs:
       with:
         java-version: '8'
 
-    - name: Go to project folder
-      run: cd ${{ github.workspace }}
-
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn -f /home/runner/work/ResubmitOrder/pom.xml clean install
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
